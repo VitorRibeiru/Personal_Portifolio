@@ -56,7 +56,11 @@
  .item {
     position: relative;
     margin-right: 40px;
-    left: 05px;
+    left: 30px;
+}
+.item h5 {
+  position: relative;
+  left: -25px;
 }
 
  .item .outer {
