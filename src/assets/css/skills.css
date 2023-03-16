@@ -1,0 +1,134 @@
+
+*********** Skills Css ***********
+
+.skill {
+    padding: 0 0 40px 0; 
+    position: relative;
+  }
+  .skill-bx {    
+    background: #151515;
+    border-radius: 64px;
+    text-align: center;
+    padding: 60px 50px;
+    margin-top: -60px;
+  }
+  .skill h2 {
+      font-size: 45px;
+      font-weight: 700;
+  }
+  .skill h5 {
+    padding-top: 20px;
+    text-align: center;
+    align-items: center;
+    font-size: 25px;
+    font-weight: 700;
+}
+  .skill p {
+      color: #B8B8B8;
+      font-size: 18px;
+      letter-spacing: 0.8px;
+      line-height: 1.5em;
+      margin: 14px 0 75px 0;
+  }
+  
+  .skill-slider {
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+  }
+  .skill-slider .item {
+    width: 100%;
+    margin: 0 auto 15px auto;
+  }
+   
+  .skill-slider .item svg {
+    width: 100%;
+    margin: 0 auto 15px auto;
+  }
+  .background-image-left {
+    top:50%;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: -4;
+  }
+
+ .item {
+    position: relative;
+    margin-right: 40px;
+}
+
+ .item .outer {
+    margin-left: 50px;
+    margin-top: 10px;
+    height: 160px;
+    width: 160px;
+    border-radius: 50%;
+    padding: 20px;
+    box-shadow: 6px 6px 10px -1px rgba(0 0 0 /.15),
+        0px 0px 12px 0px rgba(255 255 255 / .7);
+}
+ .item .outer .inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    box-shadow: inset 4px 4px 6px -1px rgba(0 0 0/ .2),
+        inset -0px -0px 6px -1px rgba(255 255 255 / .9),
+        -.5px -.5px 0px rgba(255 255 255 / 1),
+        .5px .5px 0px rgba(0 0 0 /.15),
+        0px 12px 10px -10px rgba(0 0 0 / 0.05);
+}
+
+ .item .outer .inner .number {
+    font-weight: 800;
+}
+
+ .item:nth-child(1) .outer .inner .number {
+    color: #33FFFF;
+}
+
+ .item:nth-child(2) .outer .inner .number {
+    color: #33FFFF;
+}
+
+ .item:nth-child(3) .outer .inner .number {
+    color: #33FFFF
+}
+
+circle {
+    fill: none;
+    stroke-width: 20px;
+    stroke-dasharray: 440;
+    stroke-dashoffset: 440;
+    transition: 2s linear; 
+}
+
+svg {
+    margin-left: 50px !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.react-multiple-carousel__arrow--left {
+  left: 0 !important;
+}
+
+.react-multiple-carousel__arrow--right {
+  right: 0 !important;
+}
+
+ .item:nth-child(1) circle {
+    stroke: #33FFFF;
+}
+
+ .item:nth-child(2) circle {
+    stroke: #33FFFF;
+}
+
+ .skill:nth-child(3) circle {
+    stroke: #33FFFF;
+} 
