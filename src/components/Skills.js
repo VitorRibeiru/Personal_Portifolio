@@ -1,18 +1,10 @@
-
-import {Container, Col, ROw} from "react-bootstrap";
-import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import arrow1 from "../assets/img/arrow1.svg";
-import arrow2 from "../assets/img/arrow2.svg";
-import meter1 from "../assets/img/meter1.svg";
-import meter2 from "../assets/img/meter2.svg";
-import meter3 from "../assets/img/meter3.svg";
+import Carousel from 'react-multi-carousel';
 import gradient from "../assets/img/gradient.jpg";
 
 export const Skills = () => {
   const responsive = {
     superLargeDesktop: {
-      // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 3000 },
       items: 5
     },
@@ -39,18 +31,27 @@ export const Skills = () => {
   const intervals = Array(counters.length);
   counters.fill(0);
 
-  numbers.forEach((number, index) => {
-      intervals[index] = setInterval(() => {
+    const observer = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) {
+      numbers.forEach((number, index) => {
+        intervals[index] = setInterval(() => {
           if(counters[index] === parseInt(number.dataset.num)){
-              clearInterval(counters[index]);
-          }else{
-              counters[index] += 1;
-              number.innerHTML = counters[index] + "%";
-              svgEl[index].style.strokeDashoffset = Math.floor(442 - 442 * parseFloat(number.dataset.num / 100));
+            clearInterval(counters[index]);
+          } else {
+            counters[index] += 1;
+            number.innerHTML = counters[index] + "%";
+            svgEl[index].style.strokeDashoffset = Math.floor(442 - 442 * parseFloat(number.dataset.num / 100));
           }
-      }, 20);
-      
-  }); };
+        }, 20);
+      });
+    } else {
+      intervals.forEach(interval => clearInterval(interval));
+    }
+  }, { threshold: [0.5] });
+
+  const skillSection = document.getElementById('skills');
+  observer.observe(skillSection);
+};
   return ( <section className="skill" id="skills"> 
   <div className="container">
     <div className="row">
@@ -171,7 +172,9 @@ export const Skills = () => {
         </div>
       </div>
     </div>
-  </div><img className="background-image-left" src={gradient} /> 
+  </div>
+  <img className="background-image-left" src={gradient} />
+  <br></br><br></br>
   </section> 
   )
 }

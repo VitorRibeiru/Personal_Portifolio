@@ -5,37 +5,33 @@ import { ArrowRightCircle } from 'react-bootstrap-icons';
 //import 'animate.css';
 //import TrackVisibility from 'react-on-screen';
 
-export const Banner = () => {
-  
-  
+export const Banner = () => {  
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
+  const toRotate = ["FullStack Developer", "Web Developer", "Data Analyst", "01010110 01010010"];
   const [text, setText] = useState('');
   const [delta, setDelta] = useState(300 - Math.random() * 100);
-  const toRotate = ["FullStack Developer", "Web Developer", "Data Analyst", "01010110 01010010"];
   const period = 2000;
-
-
-
+  
   useEffect(() => {
     let ticker = setInterval(() => {
       tick();
     }, delta);
-
+  
     return () => { clearInterval(ticker) };
-  }, [text])
-
+  }, [text]);
+  
   const tick = () => {
     let i = loopNum % toRotate.length;
     let fullText = toRotate[i];
     let updatedText = isDeleting ? fullText.substring(0, text.length - 1) : fullText.substring(0, text.length + 1);
-
+  
     setText(updatedText);
-
+  
     if (isDeleting) {
       setDelta(prevDelta => prevDelta / 2);
     }
-
+  
     if (!isDeleting && updatedText === fullText) {
       setIsDeleting(true);
       setDelta(period);
@@ -45,6 +41,7 @@ export const Banner = () => {
       setDelta(500);
     }
   }
+  
 
   return (
     <section className="banner" id="home">
@@ -54,7 +51,9 @@ export const Banner = () => {
                     <span className="tagline">Welcome to my Portfolio</span>
                     <div className="myself">                        
                     <h1>{`Hi!  I'm Vitor Ribeiro`}</h1>
-                    <span className="txt-rotate" period="1000" data-rotate={toRotate}><span className="wrap">{text}</span></span>
+                    <h1 className="txt-rotate">
+                    <span className="wrap">{text}</span>
+                    </h1>
                     </div>
                     <p>If even variables need to be declared, why not declare myself to you? I love technology and the things it lets us do.
                     <br></br> I love to learn new things and develop.<br></br> In love with games and coffe! 
