@@ -7,41 +7,42 @@ import projImg3 from "../assets/img/project-img3.png";
 
 export const Projects = () => {
 
-    const projects = [
+      const projects = [
         {
-          title: "Business Startup",
-          description: "Design & Development",
+          title: "Pirate Ava",
+          description: "Management system simulating a university, where we have the registration of Students, Enrollments, Subjects and Grades, made in PHP using MySQL",
           imgUrl: projImg1,
         },
         {
-          title: "Business Startup",
-          description: "Design & Development",
+          title: "HostPage",
+          description: "Host page simulation, using pure HTML and CSS.",
           imgUrl: projImg2,
         },
         {
-          title: "Business Startup",
-          description: "Design & Development",
+          title: "Web Scrapping Cotation",
+          description: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum",
           imgUrl: projImg3,
         },
         {
           title: "Business Startup",
-          description: "Design & Development",
+          description: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum",
           imgUrl: projImg1,
         },
         {
           title: "Business Startup",
-          description: "Design & Development",
+          description: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum",
           imgUrl: projImg2,
         },
         {
           title: "Business Startup",
-          description: "Design & Development",
+          description: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum",
           imgUrl: projImg3,
         },
       ];
 
+
     return (
-     <section className="project" id="project">
+     <section className="project" id="projects">
         <Container>
             <Row>
                  <Col>
@@ -50,7 +51,7 @@ export const Projects = () => {
                  <Tab.Container id="projects-tabs" defaultActiveKey="first">
                  <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
                      <Nav.Item>
-                        <Nav.Link eventKey="first"> Tab One</Nav.Link>
+                        <Nav.Link eventKey="first">Tab One</Nav.Link>
                      </Nav.Item>
                      <Nav.Item>
                         <Nav.Link eventKey="second">Tab Two</Nav.Link>
@@ -74,8 +75,12 @@ export const Projects = () => {
                             }
                         </Row>
                         </Tab.Pane>                        
-                        <Tab.Pane eventKey="second">Lore Ipsum</Tab.Pane>
-                        <Tab.Pane eventKey="third">Lore Ipsum</Tab.Pane>
+                        <Tab.Pane eventKey="second">
+                          <p>Lore Ipsum</p>
+                          </Tab.Pane>
+                        <Tab.Pane eventKey="third">
+                         <p>Lore Ipsum</p>
+                          </Tab.Pane>
                     </Tab.Content>
                     </Tab.Container>
                  </Col>
