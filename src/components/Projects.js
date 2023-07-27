@@ -1,25 +1,25 @@
 import {Container, Col, Tab, Row, Nav} from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
-import projImg1 from "../assets/img/project-img1.png";
-import projImg2 from "../assets/img/project-img2.png";
-import projImg3 from "../assets/img/project-img3.png";
+import projImg1 from "../assets/img/WebHost.png";
+import projImg2 from "../assets/img/Pirate Ava.jpg";
+import projImg3 from "../assets/img/Data Analytcs.png";
 /*import colorSharp2 from "../assets/img/colorSharp2.png"; */
 
 export const Projects = () => {
 
       const projects = [
         {
-          title: "Pirate Ava",
-          description: "Management system simulating a university, where we have the registration of Students, Enrollments, Subjects and Grades, made in PHP using MySQL",
+          title: "HostPage",
+          description: "Host page simulation, using pure HTML and CSS.",
           imgUrl: projImg1,
         },
         {
-          title: "HostPage",
-          description: "Host page simulation, using pure HTML and CSS.",
-          imgUrl: projImg2,
+          title: "Pirate Ava",
+          description: "Management system simulating a university, where we have the registration of Students, Enrollments, Subjects and Grades, made in PHP using MySQL",
+          imgUrl: projImg2
         },
         {
-          title: "Web Scrapping Cotation",
+          title: "Analytcs",
           description: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum",
           imgUrl: projImg3,
         },
@@ -34,8 +34,8 @@ export const Projects = () => {
           imgUrl: projImg2,
         },
         {
-          title: "Business Startup",
-          description: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum",
+          title: "Pirate Ava",
+          description: "Management system simulating a university, where we have the registration of Students, Enrollments, Subjects and Grades, made in PHP using MySQL",
           imgUrl: projImg3,
         },
       ];
