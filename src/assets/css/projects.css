@@ -88,7 +88,7 @@
     content: "";
     z-index: 1;
     background: linear-gradient(90deg, rgba(129,230,217,1) 0%, rgba(79,209,197,1) 100%);
-    opacity: 0.30;
+    opacity: 0.6;
     position: absolute;
     width: 100%;
     height: 0;
@@ -98,6 +98,7 @@
     height: 100%;
   }
   .proj-txtx {
+    color: #000;
     position: absolute;
     text-align: center;
     top: 65%;
@@ -106,6 +107,7 @@
     transition: 0.5s ease-in-out;
     opacity: 0;
     width: 100%;
+    z-index: 1;
   }
   .proj-imgbx:hover .proj-txtx {
     top: 50%;

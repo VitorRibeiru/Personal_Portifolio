@@ -40,7 +40,7 @@ export const Skills = () => {
           } else {
             counters[index] += 1;
             number.innerHTML = counters[index] + "%";
-            svgEl[index].style.strokeDashoffset = Math.floor(442 - 442 * parseFloat(number.dataset.num / 100));
+            svgEl[index].style.strokeDashoffset = Math.floor(440 - 442 * parseFloat(number.dataset.num / 100));
           }
         }, 20);
       });
