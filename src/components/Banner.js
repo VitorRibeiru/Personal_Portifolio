@@ -2,13 +2,21 @@ import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import headerImg from "../assets/img/PC4.png";
 import { ArrowRightCircle } from 'react-bootstrap-icons';
+import { i18n } from '../translate/i18n';
 //import 'animate.css';
 //import TrackVisibility from 'react-on-screen';
 
 export const Banner = () => {  
+
+
+  const FD = i18n.t('banner.FD');
+  const WD = i18n.t('banner.WD');
+  const DA = i18n.t('banner.DA');
+  const BC = i18n.t('banner.BC');
+
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-  const toRotate = ["FullStack Developer", "Web Developer", "Data Analyst", "01010110 01010010"];
+  const toRotate = [FD, WD, DA, BC];
   const [text, setText] = useState('');
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   const period = 2000;
@@ -48,18 +56,19 @@ export const Banner = () => {
       <Container>
         <Row className="aligh-items-center">
             <Col xs={12} md={6} xl={7}>
-                    <span className="tagline">Welcome to my Portfolio</span>
+                    <span className="tagline">{i18n.t('banner.tag')}</span>
                     <div className="myself">                        
-                    <h1>{`Hi!  I'm Vitor Ribeiro`}</h1>
+                    <h1>{i18n.t('banner.name')}</h1>
                     <h1 className="txt-rotate">
                     <span className="wrap">{text}</span>
                     </h1>
                     </div>
-                    <p>If even variables need to be declared, why not declare myself to you? I love technology and the things it lets us do.
-                    <br></br> I love to learn new things and develop.<br></br> In love with games and coffe! 
-                    <br></br> Committed to making a positive impact on the world!</p>
+                    <p>{i18n.t('banner.text1')}<br></br>
+                       {i18n.t('banner.text2')}<br></br>
+                       {i18n.t('banner.text3')}<br></br>
+                       {i18n.t('banner.text4')}</p>
                     <div className="btn">
-                      <button className="mbtn"><a>Feel the Force</a></button>
+                      <button className="mbtn"><a>{i18n.t('banner.button')}</a></button>
                     </div>
                     </Col>
           <Col xs={12} md={6} xl={5}>          
