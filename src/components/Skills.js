@@ -1,6 +1,7 @@
 import 'react-multi-carousel/lib/styles.css';
 import Carousel from 'react-multi-carousel';
 import gradient from "../assets/img/gradient.jpg";
+import { i18n } from '../translate/i18n';
 
 export const Skills = () => {
   const responsive = {
@@ -57,9 +58,31 @@ export const Skills = () => {
     <div className="row">
       <div className="col-12">
         <div className="skill-bx wow zoomIn">
-          <h2>Skills</h2>
-          <p>See some of the knowledge I master.<br></br> Knowledge gives you the power to determine your own destiny.</p>
+          <h2>{i18n.t('skills.title')}</h2>
+          <p>{i18n.t('skills.subtitle1')}<br></br>{i18n.t('skills.subtitle2')}</p>
           <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
+            
+            <div className="item">
+              <div className="outer">
+                <div className="inner">
+                  <div className="number" data-num="65">
+                  </div>
+                </div>
+              </div>
+
+              <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+                <defs>
+                  <linearGradient id="GradientColor">
+                    <stop offset="0%" stopColor="#e91e63" />
+                    <stop offset="100%" stopColor="#673ab7" />
+                  </linearGradient>
+                </defs>
+                <circle cx="80" cy="80" r="70" strokeLinecap="round" />
+              </svg>
+
+              <h5>{i18n.t('skills.skill1')}</h5>              
+            </div>
+
             <div className="item">
               <div className="outer">
                 <div className="inner">
@@ -67,6 +90,7 @@ export const Skills = () => {
                   </div>
                 </div>
               </div>
+
               <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
                 <defs>
                   <linearGradient id="GradientColor">
@@ -76,8 +100,10 @@ export const Skills = () => {
                 </defs>
                 <circle cx="80" cy="80" r="70" strokeLinecap="round" />
               </svg>
-              <h5>Agile Methodology</h5>
-            </div>
+
+              <h5>{i18n.t('skills.skill2')}</h5>
+            </div>            
+
             <div className="item">
               <div className="outer">
                 <div className="inner">
@@ -85,24 +111,7 @@ export const Skills = () => {
                   </div>
                 </div>
               </div>
-              <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
-                <defs>
-                  <linearGradient id="GradientColor">
-                    <stop offset="0%" stopColor="#e91e63" />
-                    <stop offset="100%" stopColor="#673ab7" />
-                  </linearGradient>
-                </defs>
-                <circle cx="80" cy="80" r="70" strokeLinecap="round" />
-              </svg>
-              <h5>English</h5>
-            </div>            
-            <div className="item">
-              <div className="outer">
-                <div className="inner">
-                  <div className="number" data-num="85">
-                  </div>
-                </div>
-              </div>
+
               <svg version="1.1" width="160px" height="160px">
                 <defs>
                   <linearGradient id="GradientColor">
@@ -112,8 +121,31 @@ export const Skills = () => {
                 </defs>
                 <circle cx="80" cy="80" r="70" strokeLinecap="round" />
               </svg>
-              <h5>Programming Logic</h5>
+
+              <h5>{i18n.t('skills.skill3')}</h5>
             </div>
+
+            <div className="item">
+              <div className="outer">
+                <div className="inner">
+                  <div className="number" data-num="80">
+                  </div>
+                </div>
+              </div>
+
+              <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+                <defs>
+                  <linearGradient id="GradientColor">
+                    <stop offset="0%" stopColor="#e91e63" />
+                    <stop offset="100%" stopColor="#673ab7" />
+                  </linearGradient>
+                </defs>
+                <circle cx="80" cy="80" r="70" strokeLinecap="round" />
+              </svg>
+
+              <h5>{i18n.t('skills.skill4')}</h5>
+            </div>
+
             <div className="item">
               <div className="outer">
                 <div className="inner">
@@ -121,6 +153,7 @@ export const Skills = () => {
                   </div>
                 </div>
               </div>
+
               <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
                 <defs>
                   <linearGradient id="GradientColor">
@@ -130,25 +163,8 @@ export const Skills = () => {
                 </defs>
                 <circle cx="80" cy="80" r="70" strokeLinecap="round" />
               </svg>
-              <h5>Communicative</h5>
-            </div>
-            <div className="item">
-              <div className="outer">
-                <div className="inner">
-                  <div className="number" data-num="95">
-                  </div>
-                </div>
-              </div>
-              <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
-                <defs>
-                  <linearGradient id="GradientColor">
-                    <stop offset="0%" stopColor="#e91e63" />
-                    <stop offset="100%" stopColor="#673ab7" />
-                  </linearGradient>
-                </defs>
-                <circle cx="80" cy="80" r="70" strokeLinecap="round" />
-              </svg>
-              <h5>Fast Learning</h5>
+
+              <h5>{i18n.t('skills.skill5')}</h5>
             </div>  
             <div className="item">
               <div className="outer">
@@ -157,6 +173,7 @@ export const Skills = () => {
                   </div>
                 </div>
               </div>
+
               <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
                 <defs>
                   <linearGradient id="GradientColor">
@@ -166,8 +183,10 @@ export const Skills = () => {
                 </defs>
                 <circle cx="80" cy="80" r="70" strokeLinecap="round" />
               </svg>
-              <h5>Lifelong Learner</h5>
-            </div>          
+
+              <h5>{i18n.t('skills.skill6')}</h5>
+            </div>    
+                  
           </Carousel>
         </div>
       </div>

@@ -67,9 +67,9 @@ export const NavBar = () => {
             </Nav>
             <span className="navbar-text">
               <div className="social-icon">
-                <a href="https://www.linkedin.com/in/jvitor-ribeiro/" target="_blank" without rel="noreferrer"><img src={navIcon1} alt="" /></a>
-                <a href="https://github.com/VitorRibeiru" target="_blank" without rel="noreferrer" ><img src={navIcon2} alt="" /></a>
-                <a href="https://www.instagram.com/ribeirovitorj/" target="_blank" without rel="noreferrer"><img src={navIcon3} alt="" /></a>
+                <a href="https://www.linkedin.com/in/jvitor-ribeiro/" target="_blank" rel="noreferrer"><img src={navIcon1} alt="" /></a>
+                <a href="https://github.com/VitorRibeiru" target="_blank" rel="noreferrer" ><img src={navIcon2} alt="" /></a>
+                <a href="https://www.instagram.com/ribeirovitorj/" target="_blank" rel="noreferrer"><img src={navIcon3} alt="" /></a>
               </div>
               <select onChange={handSelectChange}  value={language} >
                   <option>Selecione um Idioma</option>
