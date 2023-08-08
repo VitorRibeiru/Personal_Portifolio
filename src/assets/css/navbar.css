@@ -189,11 +189,6 @@ span.navbar-text {
   
 }
 
-.sl-nav .language {
-    display: inline;
-    
-  }
-
 .sl-nav ul {
   margin:0;
   padding:0;
@@ -205,6 +200,12 @@ span.navbar-text {
   cursor: pointer;
   padding-bottom:10px;
 }
+
+.sl-nav li b.with-margin {
+  margin-left: 20px;
+}
+
+
 .sl-nav li ul {
   display: none;
 }

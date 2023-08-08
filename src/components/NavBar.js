@@ -17,20 +17,14 @@ export const NavBar = () => {
   const [activeLink, setActiveLink] = useState('home');
   const [scrolled, setScrolled] = useState(false);
 
+  const I18n_STORAGE_KEY = 'i18nextLng';
+  const [language, setLanguage] = useState(localStorage.getItem(I18n_STORAGE_KEY));
 
-  const I18n_STORAGE_KEY = 'i18nextLng'
-
-  const [language] = useState(localStorage.getItem(I18n_STORAGE_KEY))
-  const handSelectChange = event => {
-    localStorage.setItem(
-      I18n_STORAGE_KEY,
-      event.target.value
-    )
-    window.location.reload()
+  const handleLanguageChange = (selectedLanguage) => {
+    localStorage.setItem(I18n_STORAGE_KEY, selectedLanguage);
+    setLanguage(selectedLanguage);
+    window.location.reload();
   }
-
-
-
 
   useEffect(() => {
     const onScroll = () => {
@@ -73,36 +67,31 @@ export const NavBar = () => {
                 <a href="https://github.com/VitorRibeiru" target="_blank" rel="noreferrer" ><img src={navIcon2} alt="" /></a>
                 <a href="https://www.instagram.com/ribeirovitorj/" target="_blank" rel="noreferrer"><img src={navIcon3} alt="" /></a>
               </div>
-              <select onChange={handSelectChange}  value={language} >
-                  <option>Selecione um Idioma</option>
-                  <option value="pt-BR">PT</option>
-                  <option value="us-EN">EN</option>
-                </select>
               {<HashLink to='#connect'>
                 <button className="vvd"><span>{i18n.t("navbar.button")}</span></button>
               </HashLink>}
             </span>
           </Navbar.Collapse>
-            
-
           <div className="nav-wrapper">
             <div className="sl-nav">
-              
-          <Nav className="language">
-            
-            </Nav>
-             <ul>
-             <i><FontAwesomeIcon icon={faEarthAmericas} style={{ "color": "#81e6d9" }}/><b>Português</b>  </i>
+              <ul>
                 <li>
+                  <FontAwesomeIcon icon={faEarthAmericas} style={{ color: '#81e6d9', fontSize: '1.5em' }} />
+                  <b className={language === 'en-US' ? 'with-margin' : ''}>{language === 'pt-BR' ? 'Português' : 'English'}</b>
                   <div className="triangle"></div>
                   <ul>
-                    <li><i className="sl-flag flag-bra"><div id="brazil"></div></i> <span className="active">Português</span></li>
-                    <li><i className="sl-flag flag-usa"><div id="brazil"></div></i> <span>English</span></li>
+                    <li onClick={() => handleLanguageChange('pt-BR')}>
+                      <i className="sl-flag flag-bra"><div id="brazil"></div></i> <span className={language === 'pt-BR' ? 'active' : ''}>Português</span>
+                    </li>
+                    <li onClick={() => handleLanguageChange('en-US')}>
+                      <i className="sl-flag flag-usa"><div id="brazil"></div></i> <span className={language === 'en-US' ? 'active' : ''}>English</span>
+                    </li>
                   </ul>
                 </li>
               </ul>
             </div>
           </div>
+
         </Container>
       </Navbar>
     </Router>
