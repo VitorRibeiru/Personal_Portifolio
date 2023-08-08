@@ -1,6 +1,6 @@
 
   /************ Footer Css ************/
-  .footer {
+/*   .footer {
     padding: 0 0 50px 0;
     background-image: url('../img/footer-bg.png');
     background-position: center center;
@@ -30,7 +30,7 @@
     align-items: center;
   }
   .new-email-bx::before {
-    content: "";
+    content-bubble: "";
     background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
     border-radius: 20px;
     position: absolute;
@@ -41,7 +41,7 @@
     right: -1px;
   }
   .new-email-bx::after {
-    content: "";
+    content-bubble: "";
     background: #fff;
     border-radius: 20px;
     position: absolute;
@@ -76,4 +76,138 @@
     color: #B8B8B8;
     letter-spacing: 0.5px;
     margin-top: 20px;
-  }
+  } */
+
+  .lastpage {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    grid-template-areas: "project""footer";
+    overflow-x: hidden;
+    background: black;
+    min-height: 35vh;
+    font-family: "Open Sans", sans-serif;
+}
+
+.lastpage .footer {
+    z-index: 1;
+    --footer-background: rgba(129,230,217,1);
+    display: grid;
+    position: relative;
+    grid-area: footer;
+    min-height: 12rem;
+}
+
+.lastpage .footer .bubbles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1rem;
+    background: var(--footer-background);
+    filter: url("#blob");
+}
+
+.lastpage .footer .bubbles .bubble {
+    position: absolute;
+    left: var(--position, 50%);
+    background: var(--footer-background);
+    border-radius: 100%;
+    -webkit-animation: bubble-size var(--time, 4s) ease-in infinite var(--delay, 0s), bubble-move var(--time, 4s) ease-in infinite var(--delay, 0s);
+    animation: bubble-size var(--time, 4s) ease-in infinite var(--delay, 0s), bubble-move var(--time, 4s) ease-in infinite var(--delay, 0s);
+    transform: translate(-50%, 100%);
+}
+
+.lastpage .footer .content-bubble {
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-gap: 4rem;
+    padding: 2rem;
+    background: var(--footer-background);
+}
+
+.lastpage .footer .content-bubble a,
+.lastpage .footer .content-bubble p {
+    color: #F5F7FA;
+    text-decoration: none;
+}
+
+.lastpage .footer .content-bubble b {
+    color: white;
+}
+
+.lastpage .footer .content-bubble p {
+    margin: 0;
+    font-size: 0.75rem;
+}
+
+.lastpage .footer .content-bubble>div {
+    display: flex;
+    flex-direction: column;
+    justify-content-bubble: center;
+}
+
+.lastpage .footer .content-bubble>div>div {
+    margin: 0.25rem 0;
+}
+
+.lastpage .footer .content-bubble>div>div>* {
+    margin-right: 0.5rem;
+}
+
+.lastpage .footer .content-bubble>div .image {
+    align-self: center;
+    width: 4rem;
+    height: 4rem;
+    margin: 0.25rem 0;
+    background-size: cover;
+    background-position: center;
+}
+
+@-webkit-keyframes bubble-size {
+
+    0%,
+    75% {
+        width: var(--size, 4rem);
+        height: var(--size, 4rem);
+    }
+
+    100% {
+        width: 0rem;
+        height: 0rem;
+    }
+}
+
+@keyframes bubble-size {
+
+    0%,
+    75% {
+        width: var(--size, 4rem);
+        height: var(--size, 4rem);
+    }
+
+    100% {
+        width: 0rem;
+        height: 0rem;
+    }
+}
+
+@-webkit-keyframes bubble-move {
+    0% {
+        bottom: -4rem;
+    }
+
+    100% {
+        bottom: var(--distance, 10rem);
+    }
+}
+
+@keyframes bubble-move {
+    0% {
+        bottom: -4rem;
+    }
+
+    100% {
+        bottom: var(--distance, 10rem);
+    }
+}

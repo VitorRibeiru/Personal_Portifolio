@@ -10,190 +10,190 @@ export const Skills = () => {
       items: 5
     },
     desktop: {
-      breakpoint: { max: 3000, min: 1024 },
+      breakpoint: { max: 3000, min: 0 },
       items: 3
     },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 2
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1
-    }
+    /*     tablet: {
+          breakpoint: { max: 1024, min: 464 },
+          items: 2
+        },
+        mobile: {
+          breakpoint: { max: 464, min: 0 },
+          items: 1
+        } */
   };
 
- 
-  
-  window.onload = () => { 
-  const numbers = document.querySelectorAll('.number');
-  const svgEl = document.querySelectorAll('svg circle');
-  const counters = Array(numbers.length);
-  const intervals = Array(counters.length);
-  counters.fill(0);
+
+
+  window.onload = () => {
+    const numbers = document.querySelectorAll('.number');
+    const svgEl = document.querySelectorAll('svg circle');
+    const counters = Array(numbers.length);
+    const intervals = Array(counters.length);
+    counters.fill(0);
 
     const observer = new IntersectionObserver((entries) => {
-    if (entries[0].isIntersecting) {
-      numbers.forEach((number, index) => {
-        intervals[index] = setInterval(() => {
-          if(counters[index] === parseInt(number.dataset.num)){
-            clearInterval(counters[index]);
-          } else {
-            counters[index] += 1;
-            number.innerHTML = counters[index] + "%";
-            svgEl[index].style.strokeDashoffset = Math.floor(440 - 442 * parseFloat(number.dataset.num / 100));
-          }
-        }, 20);
-      });
-    } else {
-      intervals.forEach(interval => clearInterval(interval));
-    }
-  }, { threshold: [0.5] });
+      if (entries[0].isIntersecting) {
+        numbers.forEach((number, index) => {
+          intervals[index] = setInterval(() => {
+            if (counters[index] === parseInt(number.dataset.num)) {
+              clearInterval(counters[index]);
+            } else {
+              counters[index] += 1;
+              number.innerHTML = counters[index] + "%";
+              svgEl[index].style.strokeDashoffset = Math.floor(440 - 442 * parseFloat(number.dataset.num / 100));
+            }
+          }, 20);
+        });
+      } else {
+        intervals.forEach(interval => clearInterval(interval));
+      }
+    }, { threshold: [0.5] });
 
-  const skillSection = document.getElementById('skills');
-  observer.observe(skillSection);
-};
-  return ( <section className="skill" id="skills"> 
-  <div className="container">
-    <div className="row">
-      <div className="col-12">
-        <div className="skill-bx wow zoomIn">
-          <h2>{i18n.t('skills.title')}</h2>
-          <p>{i18n.t('skills.subtitle1')}<br></br>{i18n.t('skills.subtitle2')}</p>
-          <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
-            
-            <div className="item">
-              <div className="outer">
-                <div className="inner">
-                  <div className="number" data-num="65">
+    const skillSection = document.getElementById('skills');
+    observer.observe(skillSection);
+  };
+  return (<section className="skill" id="skills">
+    <div className="container">
+      <div className="row">
+        <div className="col-12">
+          <div className="skill-bx wow zoomIn">
+            <h2>{i18n.t('skills.title')}</h2>
+            <p>{i18n.t('skills.subtitle1')}<br></br>{i18n.t('skills.subtitle2')}</p>
+            <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
+
+              <div className="item">
+                <div className="outer">
+                  <div className="inner">
+                    <div className="number" data-num="65">
+                    </div>
                   </div>
                 </div>
+
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+                  <defs>
+                    <linearGradient id="GradientColor">
+                      <stop offset="0%" stopColor="#e91e63" />
+                      <stop offset="100%" stopColor="#673ab7" />
+                    </linearGradient>
+                  </defs>
+                  <circle cx="80" cy="80" r="70" strokeLinecap="round" />
+                </svg>
+
+                <h5>{i18n.t('skills.skill1')}</h5>
               </div>
 
-              <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
-                <defs>
-                  <linearGradient id="GradientColor">
-                    <stop offset="0%" stopColor="#e91e63" />
-                    <stop offset="100%" stopColor="#673ab7" />
-                  </linearGradient>
-                </defs>
-                <circle cx="80" cy="80" r="70" strokeLinecap="round" />
-              </svg>
-
-              <h5>{i18n.t('skills.skill1')}</h5>              
-            </div>
-
-            <div className="item">
-              <div className="outer">
-                <div className="inner">
-                  <div className="number" data-num="70">
+              <div className="item">
+                <div className="outer">
+                  <div className="inner">
+                    <div className="number" data-num="70">
+                    </div>
                   </div>
                 </div>
+
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+                  <defs>
+                    <linearGradient id="GradientColor">
+                      <stop offset="0%" stopColor="#e91e63" />
+                      <stop offset="100%" stopColor="#673ab7" />
+                    </linearGradient>
+                  </defs>
+                  <circle cx="80" cy="80" r="70" strokeLinecap="round" />
+                </svg>
+
+                <h5>{i18n.t('skills.skill2')}</h5>
               </div>
 
-              <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
-                <defs>
-                  <linearGradient id="GradientColor">
-                    <stop offset="0%" stopColor="#e91e63" />
-                    <stop offset="100%" stopColor="#673ab7" />
-                  </linearGradient>
-                </defs>
-                <circle cx="80" cy="80" r="70" strokeLinecap="round" />
-              </svg>
-
-              <h5>{i18n.t('skills.skill2')}</h5>
-            </div>            
-
-            <div className="item">
-              <div className="outer">
-                <div className="inner">
-                  <div className="number" data-num="75">
+              <div className="item">
+                <div className="outer">
+                  <div className="inner">
+                    <div className="number" data-num="75">
+                    </div>
                   </div>
                 </div>
+
+                <svg version="1.1" width="160px" height="160px">
+                  <defs>
+                    <linearGradient id="GradientColor">
+                      <stop offset="0%" stopColor="#e91e63" />
+                      <stop offset="100%" stopColor="#673ab7" />
+                    </linearGradient>
+                  </defs>
+                  <circle cx="80" cy="80" r="70" strokeLinecap="round" />
+                </svg>
+
+                <h5>{i18n.t('skills.skill3')}</h5>
               </div>
 
-              <svg version="1.1" width="160px" height="160px">
-                <defs>
-                  <linearGradient id="GradientColor">
-                    <stop offset="0%" stopColor="#e91e63" />
-                    <stop offset="100%" stopColor="#673ab7" />
-                  </linearGradient>
-                </defs>
-                <circle cx="80" cy="80" r="70" strokeLinecap="round" />
-              </svg>
-
-              <h5>{i18n.t('skills.skill3')}</h5>
-            </div>
-
-            <div className="item">
-              <div className="outer">
-                <div className="inner">
-                  <div className="number" data-num="80">
+              <div className="item">
+                <div className="outer">
+                  <div className="inner">
+                    <div className="number" data-num="80">
+                    </div>
                   </div>
                 </div>
+
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+                  <defs>
+                    <linearGradient id="GradientColor">
+                      <stop offset="0%" stopColor="#e91e63" />
+                      <stop offset="100%" stopColor="#673ab7" />
+                    </linearGradient>
+                  </defs>
+                  <circle cx="80" cy="80" r="70" strokeLinecap="round" />
+                </svg>
+
+                <h5>{i18n.t('skills.skill4')}</h5>
               </div>
 
-              <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
-                <defs>
-                  <linearGradient id="GradientColor">
-                    <stop offset="0%" stopColor="#e91e63" />
-                    <stop offset="100%" stopColor="#673ab7" />
-                  </linearGradient>
-                </defs>
-                <circle cx="80" cy="80" r="70" strokeLinecap="round" />
-              </svg>
-
-              <h5>{i18n.t('skills.skill4')}</h5>
-            </div>
-
-            <div className="item">
-              <div className="outer">
-                <div className="inner">
-                  <div className="number" data-num="90">
+              <div className="item">
+                <div className="outer">
+                  <div className="inner">
+                    <div className="number" data-num="90">
+                    </div>
                   </div>
                 </div>
+
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+                  <defs>
+                    <linearGradient id="GradientColor">
+                      <stop offset="0%" stopColor="#e91e63" />
+                      <stop offset="100%" stopColor="#673ab7" />
+                    </linearGradient>
+                  </defs>
+                  <circle cx="80" cy="80" r="70" strokeLinecap="round" />
+                </svg>
+
+                <h5>{i18n.t('skills.skill5')}</h5>
               </div>
-
-              <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
-                <defs>
-                  <linearGradient id="GradientColor">
-                    <stop offset="0%" stopColor="#e91e63" />
-                    <stop offset="100%" stopColor="#673ab7" />
-                  </linearGradient>
-                </defs>
-                <circle cx="80" cy="80" r="70" strokeLinecap="round" />
-              </svg>
-
-              <h5>{i18n.t('skills.skill5')}</h5>
-            </div>  
-            <div className="item">
-              <div className="outer">
-                <div className="inner">
-                  <div className="number" data-num="100">
+              <div className="item">
+                <div className="outer">
+                  <div className="inner">
+                    <div className="number" data-num="100">
+                    </div>
                   </div>
                 </div>
+
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+                  <defs>
+                    <linearGradient id="GradientColor">
+                      <stop offset="0%" stopColor="#e91e63" />
+                      <stop offset="100%" stopColor="#673ab7" />
+                    </linearGradient>
+                  </defs>
+                  <circle cx="80" cy="80" r="70" strokeLinecap="round" />
+                </svg>
+
+                <h5>{i18n.t('skills.skill6')}</h5>
               </div>
 
-              <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
-                <defs>
-                  <linearGradient id="GradientColor">
-                    <stop offset="0%" stopColor="#e91e63" />
-                    <stop offset="100%" stopColor="#673ab7" />
-                  </linearGradient>
-                </defs>
-                <circle cx="80" cy="80" r="70" strokeLinecap="round" />
-              </svg>
-
-              <h5>{i18n.t('skills.skill6')}</h5>
-            </div>    
-                  
-          </Carousel>
+            </Carousel>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <img className="background-image-left" src={gradient} />
-  <br></br><br></br>
-  </section> 
+    <img className="background-image-left" src={gradient} />
+    <br></br><br></br>
+  </section>
   )
 }

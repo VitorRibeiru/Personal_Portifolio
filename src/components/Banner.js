@@ -18,8 +18,8 @@ export const Banner = () => {
   const [isDeleting, setIsDeleting] = useState(false);
   const toRotate = [FD, WD, DA, BC];
   const [text, setText] = useState('');
-  const [delta, setDelta] = useState(300 - Math.random() * 100);
-  const period = 2000;
+  const [delta, setDelta] = useState(/* 300 - Math.random() * */ 150);
+  const period = 1000;
   
   useEffect(() => {
     let ticker = setInterval(() => {
@@ -37,7 +37,7 @@ export const Banner = () => {
     setText(updatedText);
   
     if (isDeleting) {
-      setDelta(prevDelta => prevDelta / 2);
+      setDelta(prevDelta => prevDelta / 1.5);
     }
   
     if (!isDeleting && updatedText === fullText) {
@@ -46,7 +46,7 @@ export const Banner = () => {
     } else if (isDeleting && updatedText === '') {
       setIsDeleting(false);
       setLoopNum(loopNum + 1);
-      setDelta(500);
+      setDelta(150);
     }
   }
   

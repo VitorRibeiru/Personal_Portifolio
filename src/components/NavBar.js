@@ -1,13 +1,16 @@
 import { useState, useEffect } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { HashLink } from 'react-router-hash-link';
-import {  BrowserRouter as Router} from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import '../App.css';
-import logo from '../assets/img/VR1.png'; 
+import logo from '../assets/img/VR1.png';
 import navIcon1 from '../assets/img/nav-icon1.svg';
 import navIcon2 from '../assets/img/nav-icon2.svg';
 import navIcon3 from '../assets/img/nav-icon3.svg';
 import { i18n } from '../translate/i18n';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEarthAmericas } from '@fortawesome/free-solid-svg-icons';
+
 
 export const NavBar = () => {
 
@@ -16,15 +19,14 @@ export const NavBar = () => {
 
 
   const I18n_STORAGE_KEY = 'i18nextLng'
-  console.log('')
-  
+
   const [language] = useState(localStorage.getItem(I18n_STORAGE_KEY))
   const handSelectChange = event => {
     localStorage.setItem(
       I18n_STORAGE_KEY,
       event.target.value
     )
-    window.location = window.location
+    window.location.reload()
   }
 
 
@@ -51,10 +53,10 @@ export const NavBar = () => {
   return (
     <Router>
       <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
-        
+
         <Container>
-        <Navbar.Brand className="Logo" href="/">
-            <img src={logo} alt="Logo" width="150" height="81"/>
+          <Navbar.Brand className="Logo" href="/">
+            <img src={logo} alt="Logo" width="150" height="81" />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav">
             <span className="navbar-toggler-icon"></span>
@@ -77,11 +79,30 @@ export const NavBar = () => {
                   <option value="us-EN">EN</option>
                 </select>
               {<HashLink to='#connect'>
-                
-                <button className="vvd"><span>{i18n.t("navbar.button")}</span></button>                
+                <button className="vvd"><span>{i18n.t("navbar.button")}</span></button>
               </HashLink>}
             </span>
           </Navbar.Collapse>
+            
+
+          <div className="nav-wrapper">
+            <div className="sl-nav">
+              
+          <Nav className="language">
+            
+            </Nav>
+             <ul>
+             <i><FontAwesomeIcon icon={faEarthAmericas} style={{ "color": "#81e6d9" }}/><b>Português</b>  </i>
+                <li>
+                  <div className="triangle"></div>
+                  <ul>
+                    <li><i className="sl-flag flag-bra"><div id="brazil"></div></i> <span className="active">Português</span></li>
+                    <li><i className="sl-flag flag-usa"><div id="brazil"></div></i> <span>English</span></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
         </Container>
       </Navbar>
     </Router>
