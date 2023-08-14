@@ -1,6 +1,12 @@
 import 'react-multi-carousel/lib/styles.css';
 import Carousel from 'react-multi-carousel';
 import gradient from "../assets/img/gradient.jpg";
+import skillImg1 from "../assets/img/communication.png";
+import skillImg2 from "../assets/img/english.png";
+import skillImg3 from "../assets/img/teamwork.png";
+import skillImg4 from "../assets/img/agile-method.png";
+import skillImg5 from "../assets/img/fast-learning.png";
+import skillImg6 from "../assets/img/continuous-learning.png";
 import { i18n } from '../translate/i18n';
 
 export const Skills = () => {
@@ -20,39 +26,11 @@ export const Skills = () => {
         mobile: {
           breakpoint: { max: 464, min: 0 },
           items: 1
-        } */
+    } */
   };
 
 
 
-  window.onload = () => {
-    const numbers = document.querySelectorAll('.number');
-    const svgEl = document.querySelectorAll('svg circle');
-    const counters = Array(numbers.length);
-    const intervals = Array(counters.length);
-    counters.fill(0);
-
-    const observer = new IntersectionObserver((entries) => {
-      if (entries[0].isIntersecting) {
-        numbers.forEach((number, index) => {
-          intervals[index] = setInterval(() => {
-            if (counters[index] === parseInt(number.dataset.num)) {
-              clearInterval(counters[index]);
-            } else {
-              counters[index] += 1;
-              number.innerHTML = counters[index] + "%";
-              svgEl[index].style.strokeDashoffset = Math.floor(440 - 442 * parseFloat(number.dataset.num / 100));
-            }
-          }, 20);
-        });
-      } else {
-        intervals.forEach(interval => clearInterval(interval));
-      }
-    }, { threshold: [0.5] });
-
-    const skillSection = document.getElementById('skills');
-    observer.observe(skillSection);
-  };
   return (<section className="skill" id="skills">
     <div className="container">
       <div className="row">
@@ -62,130 +40,91 @@ export const Skills = () => {
             <p>{i18n.t('skills.subtitle1')}<br></br>{i18n.t('skills.subtitle2')}</p>
             <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
 
-              <div className="item">
-                <div className="outer">
-                  <div className="inner">
-                    <div className="number" data-num="65">
-                    </div>
-                  </div>
-                </div>
+<div className="item">
+  <img className='img-icon' src={skillImg1}></img>
+  <h5>{i18n.t('skills.skill1')}</h5>
+  <div className="star-rating">
+    <span className="star" data-rating="1"></span>
+    <span className="star" data-rating="1"></span>
+    <span className="star" data-rating="1"></span>
+    <span className="star" data-rating="1"></span>
+  </div>
+  <div className='level'>
+  <span className="level description"> {i18n.t('skills.level1')} </span>
+  </div>
+</div>
 
-                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
-                  <defs>
-                    <linearGradient id="GradientColor">
-                      <stop offset="0%" stopColor="#e91e63" />
-                      <stop offset="100%" stopColor="#673ab7" />
-                    </linearGradient>
-                  </defs>
-                  <circle cx="80" cy="80" r="70" strokeLinecap="round" />
-                </svg>
+<div className="item">
+  <img className='img-icon' src={skillImg2}></img>
+  <h5>{i18n.t('skills.skill2')}</h5>
+  <div className="star-rating">
+    <span className="star" data-rating="1"></span>
+    <span className="star" data-rating="1"></span>
+    <span className="star" data-rating="1"></span>
+  </div>
+  <div className='level'>
+  <span className="level description"> {i18n.t('skills.level2')} </span>
+  </div>
+</div>
 
-                <h5>{i18n.t('skills.skill1')}</h5>
-              </div>
+<div className="item">
+  <img className='img-icon' src={skillImg3}></img>
+  <h5>{i18n.t('skills.skill3')}</h5>
+  <div className="star-rating">
+    <span className="star" data-rating="1"></span>
+    <span className="star" data-rating="1"></span>
+    <span className="star" data-rating="1"></span>
+    <span className="star" data-rating="1"></span>
+  </div>
+  <div className='level'>
+  <span className="level description"> {i18n.t('skills.level3')} </span>
+  </div>
+</div>
 
-              <div className="item">
-                <div className="outer">
-                  <div className="inner">
-                    <div className="number" data-num="70">
-                    </div>
-                  </div>
-                </div>
+<div className="item">
+  <img className='img-icon' src={skillImg4}></img>
+  <h5>{i18n.t('skills.skill4')}</h5>
+  <div className="star-rating">
+    <span className="star" data-rating="1"></span>
+    <span className="star" data-rating="1"></span>
+  </div>
+  <div className='level'>
+  <span className="level description"> {i18n.t('skills.level4')} </span>
+  </div>
+</div>
 
-                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
-                  <defs>
-                    <linearGradient id="GradientColor">
-                      <stop offset="0%" stopColor="#e91e63" />
-                      <stop offset="100%" stopColor="#673ab7" />
-                    </linearGradient>
-                  </defs>
-                  <circle cx="80" cy="80" r="70" strokeLinecap="round" />
-                </svg>
+<div className="item">
+  <img className='img-icon' src={skillImg5}></img>
+  <h5>{i18n.t('skills.skill5')}</h5>
+  <div className="star-rating">
+    <span className="star" data-rating="1"></span>
+    <span className="star" data-rating="1"></span>
+    <span className="star" data-rating="1"></span>
+    <span className="star" data-rating="1"></span>
+  </div>
+  <div className='level'>
+  <span className="level description"> {i18n.t('skills.level5')} </span>
+  </div>
+</div>
 
-                <h5>{i18n.t('skills.skill2')}</h5>
-              </div>
+<div className="item">
+  <img className='img-icon' src={skillImg6}></img>
+  <h5>{i18n.t('skills.skill6')}</h5>
+  <div className="star-rating">
+    <span className="star" data-rating="1"></span>
+    <span className="star" data-rating="1"></span>
+    <span className="star" data-rating="1"></span>
+    <span className="star" data-rating="1"></span>
+    <span className="star" data-rating="1"></span>
+  </div>
+  <div className='level'>
+  <span className="level description"> {i18n.t('skills.level6')} </span>
+  </div>
+</div>
 
-              <div className="item">
-                <div className="outer">
-                  <div className="inner">
-                    <div className="number" data-num="75">
-                    </div>
-                  </div>
-                </div>
 
-                <svg version="1.1" width="160px" height="160px">
-                  <defs>
-                    <linearGradient id="GradientColor">
-                      <stop offset="0%" stopColor="#e91e63" />
-                      <stop offset="100%" stopColor="#673ab7" />
-                    </linearGradient>
-                  </defs>
-                  <circle cx="80" cy="80" r="70" strokeLinecap="round" />
-                </svg>
 
-                <h5>{i18n.t('skills.skill3')}</h5>
-              </div>
 
-              <div className="item">
-                <div className="outer">
-                  <div className="inner">
-                    <div className="number" data-num="80">
-                    </div>
-                  </div>
-                </div>
-
-                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
-                  <defs>
-                    <linearGradient id="GradientColor">
-                      <stop offset="0%" stopColor="#e91e63" />
-                      <stop offset="100%" stopColor="#673ab7" />
-                    </linearGradient>
-                  </defs>
-                  <circle cx="80" cy="80" r="70" strokeLinecap="round" />
-                </svg>
-
-                <h5>{i18n.t('skills.skill4')}</h5>
-              </div>
-
-              <div className="item">
-                <div className="outer">
-                  <div className="inner">
-                    <div className="number" data-num="90">
-                    </div>
-                  </div>
-                </div>
-
-                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
-                  <defs>
-                    <linearGradient id="GradientColor">
-                      <stop offset="0%" stopColor="#e91e63" />
-                      <stop offset="100%" stopColor="#673ab7" />
-                    </linearGradient>
-                  </defs>
-                  <circle cx="80" cy="80" r="70" strokeLinecap="round" />
-                </svg>
-
-                <h5>{i18n.t('skills.skill5')}</h5>
-              </div>
-              <div className="item">
-                <div className="outer">
-                  <div className="inner">
-                    <div className="number" data-num="100">
-                    </div>
-                  </div>
-                </div>
-
-                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
-                  <defs>
-                    <linearGradient id="GradientColor">
-                      <stop offset="0%" stopColor="#e91e63" />
-                      <stop offset="100%" stopColor="#673ab7" />
-                    </linearGradient>
-                  </defs>
-                  <circle cx="80" cy="80" r="70" strokeLinecap="round" />
-                </svg>
-
-                <h5>{i18n.t('skills.skill6')}</h5>
-              </div>
 
             </Carousel>
           </div>

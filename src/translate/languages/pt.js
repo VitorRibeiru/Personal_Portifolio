@@ -22,14 +22,20 @@ const messages = {
             },
             skills: {
                 title: 'Competências',
-                subtitle1: 'O conhecimento lhe dá o poder de determinar o seu própio destino.',
+                subtitle1: 'O conhecimento lhe dá o poder de determinar o seu próprio destino.',
                 subtitle2: 'Veja um pouco dos conhecimentos que eu domino!',
                 skill1: 'Comunicação',
                 skill2: 'Inglês',
                 skill3: 'Trabalho em Equipe',
                 skill4: 'Metodologias Ágeis',
                 skill5: 'Aprendizado Rápido',
-                skill6: 'Aprendizado Contínuo'
+                skill6: 'Aprendizado Contínuo',
+                level1: 'Intermediário/Avançado',
+                level2: 'Intermediário',
+                level3: 'Intermediário/Avançado',
+                level4: 'Básico/Intermediário',
+                level5: 'Intermediário/Avançado',
+                level6: 'Avançado'
             },
             projects: {
                 title: 'Projetos',

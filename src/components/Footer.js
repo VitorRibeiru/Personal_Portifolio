@@ -151,7 +151,7 @@ export const Footer = () => {
                 {/* Copyright*/}
                 <div className="copyright-div" style={{backgroundColor : "rgba(129,230,217,1)", textAlign : 'center' , "zIndex" : "1"}}>
                     
-                    <a className="copyright-msg" href="https://www.linkedin.com/in/jvitor-ribeiro/" target="_blank" rel="noreferrer" style={{textDecoration :'none' ,  "color" : "black"  }}> © 2020 Copyright : Vitor Ribeiro</a>
+                    <a className="copyright-msg" href="https://www.linkedin.com/in/jvitor-ribeiro/" target="_blank" rel="noreferrer" style={{textDecoration :'none' ,  "color" : "black"  }}> © 2023 Copyright : Vitor Ribeiro</a>
                 </div>
                 {/*Copyright*/}
 

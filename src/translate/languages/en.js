@@ -30,6 +30,12 @@ const messages = {
                         skill4: 'Agile Methodology',
                         skill5: 'Fast Learning',
                         skill6: 'Lifelong Learner',
+                        level1: 'Intermediate/Advanced',
+                        level2: 'Intermediate',
+                        level3: 'Intermediate/Advanced',
+                        level4: 'Basic/Intermediate',
+                        level5: 'Intermediate/Advanced',
+                        level6: 'Advanced'
                     },
                     projects: {
                         title: 'Projects',

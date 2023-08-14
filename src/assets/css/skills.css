@@ -58,70 +58,44 @@
     z-index: -4;
   }
 
- .item {
-    position: relative;    
+.item .star-rating {
+  margin-left: 10px;
 }
 
-.item h5 {
-   position: relative;
-   margin-left: 10px;
+.item .star-rating .star {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  background: url('/src/assets/img/star.png') no-repeat;
+  background-size: contain;
+  cursor: pointer;
 }
 
- .item .outer {
-    margin-left: 80px;
-    margin-top: 10px;
-    height: 160px;
-    width: 160px;
-    border-radius: 50%;
-    padding: 20px;
-    box-shadow: 6px 6px 10px -1px rgba(0 0 0 /.15),
-        0px 0px 12px 0px rgba(255 255 255 / .7);
-}
- .item .outer .inner {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 120px;
-    width: 120px;
-    border-radius: 50%;
-    box-shadow: inset 4px 4px 6px -1px rgba(0 0 0/ .2),
-        inset -0px -0px 6px -1px rgba(255 255 255 / .9),
-        -.5px -.5px 0px rgba(255 255 255 / 1),
-        .5px .5px 0px rgba(0 0 0 /.15),
-        0px 12px 10px -10px rgba(0 0 0 / 0.05);
+.item .star-rating .star[data-rating='1'] {
+  background-position: 0 0;
 }
 
- .item .outer .inner .number {
-    font-weight: 800;
+.item .star-rating .star[data-rating='2'] {
+  background-position: 0 -20px;
 }
 
- .item:nth-child(1) .outer .inner .number {
-    color: #33FFFF;
+.item .star-rating .star[data-rating='3'] {
+  background-position: 0 -40px;
 }
 
- .item:nth-child(2) .outer .inner .number {
-    color: #33FFFF;
+.item .star-rating .star[data-rating='4'] {
+  background-position: 0 -60px;
 }
 
- .item:nth-child(3) .outer .inner .number {
-    color: #33FFFF
+.item .star-rating .star[data-rating='5'] {
+  background-position: 0 -80px;
 }
 
-circle {
-    fill: none;
-    stroke-width: 20px;
-    stroke-dasharray: 440;
-    stroke-dashoffset: 440;
-    transition: 2s linear; 
+.img-icon {
+  width: 80px;
+  height: 80px;
 }
-
-svg {
-    margin-left: 50px !important;
-    position: absolute;
-    top: 0;
-    left: 30px;
-}
-/* Carrouseel */
 
 .react-multiple-carousel__arrow--left {
   left: 0 !important;
@@ -138,17 +112,3 @@ svg {
   backface-visibility: hidden;
   align-items: center;
 }
-
-/*-------------------------*/
-
- .item:nth-child(1) circle {
-    stroke: #33FFFF;
-}
-
- .item:nth-child(2) circle {
-    stroke: #33FFFF;
-}
-
- .skill:nth-child(3) circle {
-    stroke: #33FFFF;
-} 
